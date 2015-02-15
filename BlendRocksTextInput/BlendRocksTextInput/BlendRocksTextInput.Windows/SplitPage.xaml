@@ -1,0 +1,51 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BlendRocksTextInput"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Navigation="using:BlendRocksTextInput.Navigation"
+    x:Class="BlendRocksTextInput.SplitPage"
+    mc:Ignorable="d">
+    <Grid
+        Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Text="blendrocks.com"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            TextAlignment="Center"
+            TextWrapping="WrapWholeWords"
+            FontSize="50"
+            Margin="50"
+            Foreground="Gray"
+            FontWeight="Thin"/>
+        <StackPanel
+            x:Name="ContentContainer"
+            Grid.Row="1"
+            Margin="0,100,0,0"
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center">
+            <local:BrTextBox
+                TextWrapping="Wrap"
+                Header="First name"
+                Style="{StaticResource SplitBrTextBoxStyle}" Margin="25" />
+            <local:BrTextBox
+                TextWrapping="Wrap"
+                Header="Last name"
+                Style="{StaticResource SplitBrTextBoxStyle}" Margin="25" />
+            <local:BrTextBox
+                TextWrapping="Wrap"
+                Header="Twitter alias"
+                Style="{StaticResource SplitBrTextBoxStyle}" Margin="25"/>
+        </StackPanel>
+        <Navigation:NavigationControl
+            Grid.Row="1"
+            VerticalAlignment="Bottom"
+            d:LayoutOverrides="Width" />
+    </Grid>
+</Page>
